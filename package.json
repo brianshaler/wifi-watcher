@@ -1,0 +1,7 @@
+{
+  "name": "cartel",
+  "version": "0.0.1",
+  "dependencies" : {
+    "scraper"   :  "0.0.9"
+  }
+}
