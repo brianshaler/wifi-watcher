@@ -8,6 +8,8 @@ To get it running, clone this repository and then install dependencies:
 
     npm install
 
+(You'll need to install npm / node.js in order to run npm install, if you don't have it already.)
+
 Then, run the app:
 
     node app.js
