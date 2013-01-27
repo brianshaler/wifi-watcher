@@ -1,7 +1,8 @@
 var url = require('url'),
   querystring = require('querystring'),
   http = require('http'),
-  scraper = require('scraper');
+  scraper = require('scraper'),
+  refreshinterval = 10; // in seconds
 
 var hotspots = {
   cartel: {
@@ -104,6 +105,20 @@ function mergeObjects (obj1, obj2) {
   return obj;
 }
 
-console.log("Cool! I'll check the wifi every 10 seconds, just keep me running...");
-setInterval(checkForRedirect, 10000);
+// process command line arguments
+process.argv.forEach(function (val, index, array) {
+  if(val == "-h" || val == "--help")
+  {
+    console.log("To change refresh interval: -t [number of seconds]\r\n\r\n");
+  }
+  if(val == "-t"){
+    if(process.argv[index+1] > 0) {
+      refreshinterval = process.argv[index+1];
+    }
+  }
+}
+);
+
+console.log("Cool! I'll check the wifi every "+refreshinterval+" seconds, just keep me running...");
+setInterval(checkForRedirect, refreshinterval*1000);
 checkForRedirect();
