@@ -4,13 +4,23 @@ This simple node app will frequently request a small web resource (on S3) to see
 
 If you get redirected, the app can try to detect which hotspot you're on and log in with the specified credentials.
 
-To get it running, clone this repository and then install dependencies:
+To get it running:
+
+1. Clone or otherwise download this repository:
+
+    git clone git://github.com/brianshaler/wifi-watcher.git && cd wifi-watcher
+    OR
+    wget https://github.com/brianshaler/wifi-watcher/archive/master.zip && unzip master.zip && cd wifi-watcher-master
+
+2. Install npm (Node.js Package Manager) if you don't have it yet:
+
+    sudo apt-get install npm
+
+3. Install this app's dependencies:
 
     npm install
 
-(You'll need to install npm / node.js in order to run npm install, if you don't have it already.)
-
-Then, run the app:
+4. Then, run the app:
 
     node app.js
 
