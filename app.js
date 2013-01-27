@@ -37,6 +37,9 @@ function isThisARedirect (res) {
 	  console.log("Redirect? HOW SUSPICIOUS.");
 		redirecting(res);
 	}
+	else {
+	  console.log("No redirect, nothing to see here...");
+	}
 }
 
 function redirecting (res) {
@@ -101,5 +104,6 @@ function mergeObjects (obj1, obj2) {
   return obj;
 }
 
+console.log("Cool! I'll check the wifi every 10 seconds, just keep me running...");
 setInterval(checkForRedirect, 10000);
 checkForRedirect();
